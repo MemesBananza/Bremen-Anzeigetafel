@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDDW Anzeigetafel</title>
+</head>
+<style>
+    @font-face {
+        font-family: 'Tafel'; /* Name your font family */
+        src: url('/Font_Tafel.ttf'); /* Locate the .ttf file within your directory*/
+    }
+    body {
+        font-family: 'Tafel';
+    }
+</style>
+<body>
+    <script>
+        const url = 'https://api.ivao.aero/v2/airports/EDDW/traffics'{
+            headers: {
+                Authorisation: 'Bearer {2dab156f-684c-4cee-9b64-2da37503afcb}'
+            }
+        };
+        fetch (url)
+            .then
+                if (!Response.ok) {
+                    throw new Error ('No goot response');
+                }
+                else {
+                    console.log (Response);
+                }
+            
+        
+    </script>
+</body>
+</html>
