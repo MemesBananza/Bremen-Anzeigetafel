@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EDDW Anzeigetafel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <style>
     @font-face {
@@ -16,21 +17,88 @@
 </style>
 <body>
     <script>
-        const url = 'https://api.ivao.aero/v2/airports/EDDW/traffics'{
+        const url = 'https://my.vatsim.net/api/v2/aip/airports/KJFK'
+        fetch (url, {
             headers: {
-                Authorisation: 'Bearer {2dab156f-684c-4cee-9b64-2da37503afcb}'
+                'Access-Control-Allow-Origin': '',
+                'crossorigin': 'Anonymous',
             }
-        };
-        fetch (url)
+        }
+        )
             .then
                 if (!Response.ok) {
-                    throw new Error ('No goot response');
+                    throw new Error ('No good response');
+                    window.alert ('No good response!');
                 }
                 else {
                     console.log (Response);
                 }
-            
-        
+                if (Response.message = "airport could not be found") {
+                    window.alert("Airport not active")
+                }
     </script>
+    <div class="container-fluid p-3">
+        <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Callsign</th>
+                <th scope="col">From</th>
+                <th scope="col">Departed at</th>
+                <th scope="col">VID</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Larry</td>
+                <td>the Bird</td>
+                <td>@twitter</td>
+              </tr>
+            </tbody>
+          </table>
+          
+          <table class="table">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Handle</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Larry</td>
+                <td>the Bird</td>
+                <td>@twitter</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
 </body>
 </html>
